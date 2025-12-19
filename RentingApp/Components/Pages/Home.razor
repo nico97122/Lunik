@@ -1,0 +1,53 @@
+﻿@rendermode InteractiveServer
+@page "/"
+<PageTitle>Lunik rentals - Accueil</PageTitle>
+
+<MudTabs Elevation="2" Rounded="true" PanelClass="px-4 py-6">
+    <MudTabPanel Text="Accueil">
+        <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Bienvenue chez Lunik rentals !</MudText>
+        <MudText Typo="Typo.subtitle1" Align="Align.Center" GutterBottom="true">Découvrez nos appartements d'exception.</MudText>
+        <div class="d-flex align-center justify-center">
+            <img src="/images/villa.jpg" style="max-height: 50vh; max-width: 100%;" alt="La villa">
+        </div>
+    </MudTabPanel>
+    <MudTabPanel Text="Nos Appartements">
+        <div class="d-flex justify-center mt-4">
+            <MudText>Retrouvez ici la liste détaillée de tous nos appartements disponibles à la location.</MudText>
+        </div>
+        <MudCarousel Class="mud-width-full  mt-6" Style="height:400px;" ShowArrows="true" ShowBullets="true" AutoCycle="false" TData="object">
+            <MudCarouselItem>
+                <div class="d-flex align-center justify-center" style="width:100%; height:100%">
+                    <img src="/images/appart1.jpg" style="height:100%;  width:auto;" alt="Le salon">
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem>
+                <div class="d-flex align-center justify-center" style="width:100%; height:100%">
+                    <img src="/images/appart2.jpg" style="height:100%;  width:auto;" alt="Le salon">
+                </div>
+            </MudCarouselItem>
+            <MudCarouselItem>
+                <div class="d-flex align-center justify-center" style="width:100%; height:100%">
+                    <img src="/images/appart3.jpg" style="height:100%;  width:auto;" alt="Le salon">
+                </div>
+            </MudCarouselItem>
+        </MudCarousel>
+
+        <div class="d-flex justify-center mt-4">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/appartements">Voir les appartements</MudButton>
+        </div>
+    </MudTabPanel>
+    <MudTabPanel Text="Réserver">
+        <MudText>Utilisez notre calendrier interactif pour choisir vos dates de séjour.</MudText>
+        <MudStack AlignItems="AlignItems.Center" Style="width:650px; height:450px">
+            <MudDateRangePicker PickerVariant="PickerVariant.Static" @bind-DateRange="@_dateRange" Margin="Margin.Dense" />
+        </MudStack>
+        <MudButton Variant="Variant.Filled" Color="Color.Secondary" Class="mt-4" Href="/reservation">Faire une réservation</MudButton>
+    </MudTabPanel>
+    <MudTabPanel Text="Contact">
+        <MudText>Une question ? Contactez-nous directement via notre formulaire ou par téléphone.</MudText>
+        <MudButton Variant="Variant.Filled" Color="Color.Tertiary" Class="mt-4" Href="/contact">Nous contacter</MudButton>
+    </MudTabPanel>
+</MudTabs>
+@code {
+    private DateRange _dateRange { get; set; }
+}

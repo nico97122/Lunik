@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="1-RentingBS/1-RentingBS.csproj" />
+  <Project Path="2-RentingModel/3-RentingModel.csproj" />
+  <Project Path="3-RentingDAL/2-RentingDAL.csproj" />
+  <Project Path="RentingApp/RentingApp.csproj" />
+</Solution>

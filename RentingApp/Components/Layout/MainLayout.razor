@@ -1,0 +1,38 @@
+﻿
+@inherits LayoutComponentBase
+
+@* Required *@
+<MudThemeProvider />
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider /> 
+
+<div class="page" style="background-color: #f0f2f5; min-height: 100vh;">
+    <main>
+        <div class="top-row px-4" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
+            </div>
+            <MudText Typo="Typo.h4" Align="Align.Center">Lunik rentals</MudText>
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">A propos</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+        <footer style="padding: 20px; text-align: right; color: #666;">
+            <MudText Typo="Typo.caption">© 2025 Lunik Rentals. Tous droits réservés.</MudText>
+        </footer>
+    </main>
+
+</div>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>
