@@ -2,52 +2,63 @@
 @page "/"
 <PageTitle>Lunik rentals - Accueil</PageTitle>
 
-<MudTabs Elevation="2" Rounded="true" PanelClass="px-4 py-6">
-    <MudTabPanel Text="Accueil">
-        <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Bienvenue chez Lunik rentals !</MudText>
-        <MudText Typo="Typo.subtitle1" Align="Align.Center" GutterBottom="true">Découvrez nos appartements d'exception.</MudText>
-        <div class="d-flex align-center justify-center">
-            <img src="/images/villa.jpg" style="max-height: 50vh; max-width: 100%;" alt="La villa">
-        </div>
-    </MudTabPanel>
-    <MudTabPanel Text="Nos Appartements">
-        <div class="d-flex justify-center mt-4">
-            <MudText>Retrouvez ici la liste détaillée de tous nos appartements disponibles à la location.</MudText>
-        </div>
-        <MudCarousel Class="mud-width-full  mt-6" Style="height:400px;" ShowArrows="true" ShowBullets="true" AutoCycle="false" TData="object">
-            <MudCarouselItem>
-                <div class="d-flex align-center justify-center" style="width:100%; height:100%">
-                    <img src="/images/appart1.jpg" style="height:100%;  width:auto;" alt="Le salon">
+<MudContainer MaxWidth="MaxWidth.Large" Class="py-8">
+    <MudTabs Elevation="2" Rounded="true" PanelClass="px-4 py-6">
+        <MudTabPanel Text="Accueil">
+            <MudStack Spacing="4" AlignItems="AlignItems.Center">
+                <MudText Typo="Typo.h2" Align="Align.Center" Class="font-weight-bold">Bienvenue chez Lunik rentals !</MudText>
+                <MudText Typo="Typo.subtitle1" Align="Align.Center" Color="Color.Secondary">Découvrez nos appartements d'exception.</MudText>
+                <div class="d-flex align-center justify-center" style="width: 100%; margin: 2rem 0;">
+                    <MudImage Src="/images/villa.jpg" Alt="La villa" Style="max-height: 50vh; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
                 </div>
-            </MudCarouselItem>
-            <MudCarouselItem>
-                <div class="d-flex align-center justify-center" style="width:100%; height:100%">
-                    <img src="/images/appart2.jpg" style="height:100%;  width:auto;" alt="Le salon">
-                </div>
-            </MudCarouselItem>
-            <MudCarouselItem>
-                <div class="d-flex align-center justify-center" style="width:100%; height:100%">
-                    <img src="/images/appart3.jpg" style="height:100%;  width:auto;" alt="Le salon">
-                </div>
-            </MudCarouselItem>
-        </MudCarousel>
+                <MudText Typo="Typo.body2" Align="Align.Center" Class="mt-4">Offrez-vous une expérience unique de confort et de détente</MudText>
+            </MudStack>
+        </MudTabPanel>
+        <MudTabPanel Text="Nos Appartements">
+            <MudStack Spacing="4">
+                <MudText Typo="Typo.h5" Align="Align.Center">Retrouvez ici la liste détaillée de tous nos appartements disponibles à la location.</MudText>
 
-        <div class="d-flex justify-center mt-4">
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/appartements">Voir les appartements</MudButton>
-        </div>
-    </MudTabPanel>
-    <MudTabPanel Text="Réserver">
-        <MudText>Utilisez notre calendrier interactif pour choisir vos dates de séjour.</MudText>
-        <MudStack AlignItems="AlignItems.Center" Style="width:650px; height:450px">
-            <MudDateRangePicker PickerVariant="PickerVariant.Static" @bind-DateRange="@_dateRange" Margin="Margin.Dense" />
-        </MudStack>
-        <MudButton Variant="Variant.Filled" Color="Color.Secondary" Class="mt-4" Href="/reservation">Faire une réservation</MudButton>
-    </MudTabPanel>
-    <MudTabPanel Text="Contact">
-        <MudText>Une question ? Contactez-nous directement via notre formulaire ou par téléphone.</MudText>
-        <MudButton Variant="Variant.Filled" Color="Color.Tertiary" Class="mt-4" Href="/contact">Nous contacter</MudButton>
-    </MudTabPanel>
-</MudTabs>
+                <MudCarousel Class="mud-width-full" Style="height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" ShowArrows="true" ShowBullets="true" AutoCycle="false" TData="object">
+                    <MudCarouselItem>
+                        <div class="d-flex align-center justify-center" style="width: 100%; height: 100%;">
+                            <img src="/images/appart1.jpg" style="height: 100%; width: auto; object-fit: cover;" alt="Appartement 1">
+                        </div>
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <div class="d-flex align-center justify-center" style="width: 100%; height: 100%;">
+                            <img src="/images/appart2.jpg" style="height: 100%; width: auto; object-fit: cover;" alt="Appartement 2">
+                        </div>
+                    </MudCarouselItem>
+                    <MudCarouselItem>
+                        <div class="d-flex align-center justify-center" style="width: 100%; height: 100%;">
+                            <img src="/images/appart3.jpg" style="height: 100%; width: auto; object-fit: cover;" alt="Appartement 3">
+                        </div>
+                    </MudCarouselItem>
+                </MudCarousel>
+
+                <div class="d-flex justify-center">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/appartements" Size="Size.Large">Voir les appartements</MudButton>
+                </div>
+            </MudStack>
+        </MudTabPanel>
+        <MudTabPanel Text="Réserver">
+            <MudStack Spacing="4" AlignItems="AlignItems.Center">
+                <MudText Typo="Typo.h5" Align="Align.Center">Utilisez notre calendrier interactif pour choisir vos dates de séjour.</MudText>
+                <MudPaper Class="pa-6" Elevation="1" Style="width: 100%; max-width: 650px;">
+                    <MudDateRangePicker PickerVariant="PickerVariant.Static" @bind-DateRange="@_dateRange" Margin="Margin.Dense" />
+                </MudPaper>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" Href="/reservation" Size="Size.Large">Faire une réservation</MudButton>
+            </MudStack>
+        </MudTabPanel>
+        <MudTabPanel Text="Contact">
+            <MudStack Spacing="4" AlignItems="AlignItems.Center">
+                <MudText Typo="Typo.h5" Align="Align.Center">Une question ? Contactez-nous directement via notre formulaire ou par téléphone.</MudText>
+                <MudButton Variant="Variant.Filled" Color="Color.Tertiary" Href="/contact" Size="Size.Large">Nous contacter</MudButton>
+            </MudStack>
+        </MudTabPanel>
+    </MudTabs>
+</MudContainer>
+
 @code {
     private DateRange _dateRange { get; set; }
 }
