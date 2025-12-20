@@ -11,16 +11,4 @@
     <PackageReference Include="MudBlazor" Version="8.15.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\images\appart1.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\images\appart2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\images\appart3.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
