@@ -10,25 +10,24 @@
 @* Needed for snackbars *@      
 <MudSnackbarProvider /> 
 
-<div class="page" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; display: flex; flex-direction: column;">
-    <main style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
-        <div id="navbar" class="top-row px-4 tropical-nav" style="display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0, 78, 137, 0.2); height: 70px; flex-shrink: 0; position: sticky; top: 0; z-index: 1000;">
-            <div style="width: 50px; height: 50px; border-radius: 50%; background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 78, 137, 0.2);">
+<div class="page">
+    <main style="display: flex; flex-direction: column; min-height: 100vh;">
+        <div id="navbar" class="top-row tropical-nav">
+            <div class="icon-class">
                 <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
             </div>
-            <MudText Typo="Typo.h4" Align="Align.Center" Style="color: white; font-weight: 700; letter-spacing: 0.5px;">Lunik rentals</MudText>
+            <MudText Typo="Typo.h4" Style="color: white; font-weight: 700; letter-spacing: 0.5px;">Lunik rentals</MudText>
             <a href="https://learn.microsoft.com/aspnet/core/" target="_blank" class="tropical-link">À propos</a>
         </div>
 
-        <article class="content px-4" style="flex: 1; overflow-y: auto; overflow-x: hidden; min-height: 0;">
+        <article class="content px-4" >
             @Body
         </article>
-        
-        <footer style="padding: 20px; text-align: center; background: linear-gradient(90deg, #004e89 0%, #1f8c6f 100%); color: #ffd89b; box-shadow: 0 -4px 15px rgba(0, 78, 137, 0.2); height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <MudText Typo="Typo.caption" Style="opacity: 0.95; margin: 0;">© 2025 Lunik Rentals. Tous droits réservés.</MudText>
+
+        <footer class="footer-row">
+            <MudText Typo="Typo.caption" Style="margin: 0;">© 2025 Lunik Rentals. Tous droits réservés.</MudText>
         </footer>
     </main>
-
 </div>
 
 <div id="blazor-error-ui" data-nosnippet>
