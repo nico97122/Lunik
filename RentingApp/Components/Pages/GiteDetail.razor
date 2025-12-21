@@ -1,0 +1,58 @@
+﻿@page "/gite/{Id:int}"
+@using _1_RentingBS
+@using _2_RentingModel
+@inject IGiteService GiteService
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8">
+    @if (gite != null)
+    {
+        <MudGrid>
+            <MudItem xs="12" md="8">
+                <MudImage Src="@(string.IsNullOrEmpty(gite.ImageUrl) ? "https://via.placeholder.com/800x400" : gite.ImageUrl)"
+                          ObjectFit="ObjectFit.Cover" Width="600" Height="400" Class="rounded-lg elevation-4" />
+
+                <MudText Typo="Typo.h4" Class="mt-4" Color="Color.Primary">@gite.Nom</MudText>
+
+                <MudText Typo="Typo.body1" Class="mt-4 text-justify">@gite.DescriptionLongue</MudText>
+
+                <MudDivider Class="my-6" />
+
+                <MudText Typo="Typo.h5" Class="mb-3">Équipements</MudText>
+                <MudGrid>
+                    @foreach (var eq in gite.Equipements)
+                    {
+                        <MudItem xs="6" sm="4">
+                            <div class="d-flex align-center">
+                                <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" />
+                                <MudText>@eq</MudText>
+                            </div>
+                        </MudItem>
+                    }
+                </MudGrid>
+            </MudItem>
+
+            <MudItem xs="12" md="4">
+                <MudPaper Elevation="4" Class="pa-6 sticky-top" Style="top: 80px;">
+                    <MudText Typo="Typo.h4" Color="Color.Secondary" Align="Align.Center">@gite.PrixNuit € <span style="font-size:1rem; color:gray">/ nuit</span></MudText>
+                    <MudForm Class="mt-4">
+                            <MudDateRangePicker PickerVariant="PickerVariant.Static" @bind-DateRange="@_dateRange" Margin="Margin.Dense" />
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" Class="mt-6" Size="Size.Large">
+                            Demander une réservation
+                        </MudButton>
+                    </MudForm>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+    }
+    else
+    {
+        <MudAlert Severity="Severity.Error">Ce gîte n'existe pas.</MudAlert>
+    }
+</MudContainer>
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Gite? gite;
+    protected override void OnInitialized() => gite = GiteService.GetGiteById(Id);
+    private DateRange _dateRange { get; set; }
+}

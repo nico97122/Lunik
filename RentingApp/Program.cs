@@ -1,7 +1,10 @@
 using MudBlazor.Services;
 using RentingApp.Components;
-
+using _1_RentingBS;
 var builder = WebApplication.CreateBuilder(args);
+
+//conteneur d'injection de dépendances a faire
+builder.Services.AddScoped<IGiteService, GiteService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -9,6 +12,8 @@ builder.Services.AddRazorComponents()
 
 //Ajout des services MudBlazor
 builder.Services.AddMudServices();
+
+
 
 var app = builder.Build();
 

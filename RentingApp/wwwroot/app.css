@@ -1,11 +1,12 @@
-a, .btn-link {
-    color: #ff6b35;
-    transition: color 0.3s ease;
-}
 
 .page {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     display: flex;
+}
+
+.brand-link:hover {
+    transform: scale(1.08);
+    text-decoration: none !important;
 }
 
 .footer-row {

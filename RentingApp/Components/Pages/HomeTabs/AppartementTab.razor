@@ -1,1 +1,39 @@
-﻿
+﻿@using _1_RentingBS
+@using _2_RentingModel
+@inject NavigationManager NavManager
+@inject IGiteService GiteService
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-5">
+    <MudText Typo="Typo.h3" Align="Align.Center" Class="mb-6" Color="Color.Primary">Nos Hébergements</MudText>
+
+    <MudGrid>
+        @foreach (var gite in gites)
+        {
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard Elevation="3" Class="h-100">
+                    <MudCardMedia Image="@(string.IsNullOrEmpty(gite.ImageUrl) ? "https://via.placeholder.com/400x250" : gite.ImageUrl)" Height="200" />
+                    <MudCardContent>
+                        <MudText Typo="Typo.h5">@gite.Nom</MudText>
+                        <MudText Typo="Typo.body2" Class="mt-2">@gite.DescriptionCourte</MudText>
+                        <div class="d-flex align-center mt-3">
+                            <MudIcon Icon="@Icons.Material.Filled.Euro" Size="Size.Small" />
+                            <MudText Typo="Typo.h6" Color="Color.Secondary" Class="ml-1">@gite.PrixNuit / nuit</MudText>
+                        </div>
+                        <MudChip T="string" Icon="@Icons.Material.Filled.Person" Size="Size.Small" Color="Color.Info" Class="mt-2">
+                            @gite.Capacite pers.
+                        </MudChip>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" OnClick="@(() => VoirDetails(gite.Id))">En savoir plus</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+</MudContainer>
+
+@code {
+    private List<Gite> gites = new();
+    protected override void OnInitialized() => gites = GiteService.GetGites();
+    private void VoirDetails(int id) => NavManager.NavigateTo($"/gite/{id}");
+}

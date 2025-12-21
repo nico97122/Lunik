@@ -8,19 +8,24 @@
 <MudDialogProvider />
 
 @* Needed for snackbars *@      
-<MudSnackbarProvider /> 
+<MudSnackbarProvider />
 
 <div class="page">
     <main style="display: flex; flex-direction: column; min-height: 100vh;">
         <div id="navbar" class="top-row tropical-nav">
-            <div class="icon-class">
-                <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
-            </div>
-            <MudText Typo="Typo.h4" Style="color: white; font-weight: 700; letter-spacing: 0.5px;">Lunik rentals</MudText>
+            <a href="/" class="brand-link">
+                <div class="icon-class">
+                    <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
+                </div>
+            </a>
+            <a href="/" class="brand-link">
+                <MudText Typo="Typo.h4" Style="color: white; font-weight: 700; letter-spacing: 0.5px;">Lunik rentals</MudText>
+            </a>
+
             <a href="https://learn.microsoft.com/aspnet/core/" target="_blank" class="tropical-link">À propos</a>
         </div>
 
-        <article class="content px-4" >
+        <article class="content px-4">
             @Body
         </article>
 
