@@ -1,4 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using _1_RentingBS
+@using _2_RentingModel
+@inherits LayoutComponentBase
+@inject ILocalizationService LocalizationService
 
 @* Required *@
 <MudThemeProvider />
@@ -12,17 +15,32 @@
 
 <div class="page">
     <main style="display: flex; flex-direction: column; min-height: 100vh;">
-        <div id="navbar" class="top-row tropical-nav">
+        <div id="navbar" class="top-row tropical-nav" style="overflow: visible;">
             <a href="/" class="brand-link">
                 <div class="icon-class">
                     <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
                 </div>
             </a>
             <a href="/" class="brand-link">
-                <MudText Typo="Typo.h4" Style="color: white; font-weight: 700; letter-spacing: 0.5px;">Lunik rentals</MudText>
+                <MudText Typo="Typo.h4" Style="color: white; font-weight: 700;">Le Belvédère de l'Autre-Bord</MudText>
             </a>
 
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank" class="tropical-link">À propos</a>
+            <div style="display: flex; align-items: center; gap: 1rem; position: relative;">
+                <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
+                    <ActivatorContent>
+                        <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Inherit" Style="color: white;" />
+                    </ActivatorContent>
+                    <ChildContent>
+                        <MudMenuItem OnClick="@(() => ChangeCulture(SupportedLanguagesEnum.French))">
+                            <MudText>Français</MudText>
+                        </MudMenuItem>
+                        <MudMenuItem OnClick="@(() => ChangeCulture(SupportedLanguagesEnum.English))">
+                            <MudText>English</MudText>
+                        </MudMenuItem>
+                    </ChildContent>
+                </MudMenu>
+                <a href="https://gitecannelle.com/" target="_blank" class="tropical-link">@Word("About")</a>
+            </div>
         </div>
 
         <article class="content px-4">

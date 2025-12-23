@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //conteneur d'injection de dépendances a faire
 builder.Services.AddScoped<IGiteService, GiteService>();
+builder.Services.AddScoped<ILocalizationService, LocalizationService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
