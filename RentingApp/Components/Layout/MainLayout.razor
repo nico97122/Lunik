@@ -31,12 +31,12 @@
                         <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Inherit" Style="color: white;" />
                     </ActivatorContent>
                     <ChildContent>
-                        <MudMenuItem OnClick="@(() => ChangeCulture(SupportedLanguagesEnum.French))">
-                            <MudText>Français</MudText>
-                        </MudMenuItem>
-                        <MudMenuItem OnClick="@(() => ChangeCulture(SupportedLanguagesEnum.English))">
-                            <MudText>English</MudText>
-                        </MudMenuItem>
+                        @foreach (SupportedLanguagesEnum lang in Enum.GetValues(typeof(SupportedLanguagesEnum)))
+                        {
+                            <MudMenuItem OnClick="@(() => ChangeCulture(lang))">
+                                <MudText>@lang.GetDisplayName()</MudText>
+                            </MudMenuItem>
+                        }
                     </ChildContent>
                 </MudMenu>
                 <a href="https://gitecannelle.com/" target="_blank" class="tropical-link">@Word("About")</a>
@@ -48,7 +48,7 @@
         </article>
 
         <footer class="footer-row">
-            <MudText Typo="Typo.caption" Style="margin: 0;">© 2025 Lunik Rentals. Tous droits réservés.</MudText>
+            <MudText Typo="Typo.caption" Style="margin: 0;">© 2025 Lunik Rentals. @Word("All rights reserved").</MudText>
         </footer>
     </main>
 </div>

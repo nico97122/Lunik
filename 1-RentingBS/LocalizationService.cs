@@ -1,4 +1,5 @@
-﻿using _2_RentingModel;
+﻿using _1_RentingBS.Languages;
+using _2_RentingModel;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,6 +7,9 @@ using System.Text;
 
 namespace _1_RentingBS
 {
+    /// <summary>
+    /// Cette classe gère la culture de l'application et les traductions.C'est une Factory.
+    /// </summary>
     public class LocalizationService : ILocalizationService
     {
         private CultureInfo _currentCulture = CultureInfo.CurrentCulture;
@@ -25,50 +29,26 @@ namespace _1_RentingBS
 
         public string TransalateFromEnglish(string sentence)
         {
-            Dictionary.TryGetValue(sentence, out Dictionary<SupportedLanguagesEnum, string>? translations);
-            if (translations != null && translations.TryGetValue(SupportedLanguagesEnumExtensions.GetCommonName(_currentCulture.Name), out string? translatedSentence))
+            Language language;
+            switch (_currentCulture.Name.GetCommonName())
             {
-                return translatedSentence;
+                case SupportedLanguagesEnum.English:
+                    language = new EnglishLanguage();
+                    break;
+                case SupportedLanguagesEnum.French:
+                    language = new FrenchLanguage();
+                    break;
+                default:
+                    //set up logging 
+                    //Logger.LogWarning("Language not supported: " + _currentCulture.Name);
+                    return sentence; 
             }
-            else
-            {
-                return sentence; // Return the original sentence if not found in the dictionary
-            }
+            return language.GetTranslation(sentence);
         }
 
         public string GetLanguageCode()
         {
             return _currentCulture.Name;
         }
-
-        private Dictionary<string, Dictionary<SupportedLanguagesEnum, string>> Dictionary = new Dictionary<string, Dictionary<SupportedLanguagesEnum, string>>()
-        {
-            {"Hello",
-             new Dictionary<SupportedLanguagesEnum, string>()
-                   {
-                   {SupportedLanguagesEnum.French,"Bonjour"},
-                   {SupportedLanguagesEnum.English,"Hello"}
-                   }
-            },
-            {"Welcome",
-              new Dictionary<SupportedLanguagesEnum, string>()
-                   {
-                   {SupportedLanguagesEnum.French,"Bienvenue"},
-                   {SupportedLanguagesEnum.English,"Welcome"}
-                   }
-            },
-            {"About",
-              new Dictionary<SupportedLanguagesEnum, string>()
-                   {
-                   {SupportedLanguagesEnum.French,"A propos"},
-                   {SupportedLanguagesEnum.English,"About"}
-                   }
-            },
-
-            //{"Welcome", "Bienvenue" },
-            //{"Language", "Langue" },
-            //{"French,", "Français" },
-            //{"About", "À propos" }
-        };
     }
 }

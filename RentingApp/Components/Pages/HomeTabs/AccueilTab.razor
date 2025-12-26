@@ -1,14 +1,13 @@
-﻿
+﻿@inherits BlazorComponentBase
 
-<MudStack  AlignItems="AlignItems.Center" Style="justify-content: center; padding: 1rem;">
+<MudStack AlignItems="AlignItems.Center" Style="justify-content: center; padding: 1rem;">
     <div class="tropical-header" style=" width: 100%">
         <MudText Typo="Typo.h3" Class="font-weight-bold">Le Belvédère de l'Autre-Bord </MudText>
-        <MudText Typo="Typo.subtitle2">vous souhaite la</MudText>
-        <MudText Typo="Typo.h2" Style="font-weight-bold">Bienvenue</MudText>
-
+        <MudText Typo="Typo.subtitle2">@Word("has the pleasure to")</MudText>
+        <MudText Typo="Typo.h2">@Word("WelcomeName1")</MudText>
     </div>
     <div style="width: 50%;">
-        <MudCarousel  ShowArrows="true" AutoCycle="true" TData="object" Style="min-height: 500px; width: 100%;">
+        <MudCarousel ShowArrows="true" AutoCycle="true" TData="object" Style="min-height: 500px; width: 100%;">
             <MudCarouselItem Transition="Transition.Slide">
                 <div class="d-flex align-center justify-center" style="width: 100%; height: 100%;">
                     <img src="/images/bungalow1.jpeg" class="tropical-image" alt="Appartement 1">
@@ -26,5 +25,5 @@
             </MudCarouselItem>
         </MudCarousel>
     </div>
-    <MudText Typo="Typo.body2" Align="Align.Center" Class="font-weight-500" Style="margin-bottom: 1rem;">Offrez-vous une expérience unique de confort et de détente</MudText>
+    <MudText Typo="Typo.body2" Align="Align.Center" Class="font-weight-500" Style="margin-bottom: 1rem;">@Word("Treat yourself to a unique experience of comfort and relaxation")</MudText>
 </MudStack>
