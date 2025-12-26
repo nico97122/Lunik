@@ -12,7 +12,7 @@ namespace _1_RentingBS
     /// </summary>
     public class LocalizationService : ILocalizationService
     {
-        private CultureInfo _currentCulture = CultureInfo.CurrentCulture;
+        private CultureInfo _currentCulture = new CultureInfo(SupportedLanguagesEnum.French.GetTechnicalName());
 
         //action pour notif le frontend => abonnement important
         public event Action? OnCultureChanged;
