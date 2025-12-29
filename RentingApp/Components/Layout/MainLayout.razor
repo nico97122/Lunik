@@ -1,7 +1,8 @@
 ﻿@using _1_RentingBS
 @using _2_RentingModel
 @inherits LayoutComponentBase
-@inject ILocalizationService LocalizationService
+@inject ILocalizationService _localizationService
+@inject ILogger<MainLayout> _logger
 
 @* Required *@
 <MudThemeProvider />

@@ -18,6 +18,8 @@ namespace _1_RentingBS
         /// <returns>A string containing the translated sentence. Returns original value if translation failed.</returns>
         string TransalateFromEnglish(string sentence);
 
+        string GetCurrentCulture();
+
         /// <summary>
         /// Occurs when the application's culture changes.
         /// </summary>

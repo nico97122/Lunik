@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace _1_RentingBS
 {
@@ -12,13 +13,18 @@ namespace _1_RentingBS
     /// </summary>
     public class LocalizationService : ILocalizationService
     {
-        private CultureInfo _currentCulture = new CultureInfo(SupportedLanguagesEnum.French.GetTechnicalName());
+        private CultureInfo _currentCulture;
 
         //action pour notif le frontend => abonnement important
         public event Action? OnCultureChanged;
 
-        public CultureInfo CurrentCulture => _currentCulture;
+        private readonly ILogger<LocalizationService> _logger;
 
+        public LocalizationService(ILogger<LocalizationService> logger)
+        {
+            _logger = logger;
+            _currentCulture= new CultureInfo(SupportedLanguagesEnum.French.GetTechnicalName());
+        }
         public void SetCulture(SupportedLanguagesEnum language)
         {
             _currentCulture = new CultureInfo(language.GetTechnicalName());
@@ -39,8 +45,7 @@ namespace _1_RentingBS
                     language = new FrenchLanguage();
                     break;
                 default:
-                    //set up logging 
-                    //Logger.LogWarning("Language not supported: " + _currentCulture.Name);
+                    _logger.LogWarning("Language not supported: " + _currentCulture.Name);
                     return sentence; 
             }
             return language.GetTranslation(sentence);
@@ -49,6 +54,11 @@ namespace _1_RentingBS
         public string GetLanguageCode()
         {
             return _currentCulture.Name;
+        }
+
+        public string GetCurrentCulture()
+        {
+            return _currentCulture.Name.GetCommonName().ToString();
         }
     }
 }
