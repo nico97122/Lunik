@@ -4,10 +4,7 @@
     display: flex;
 }
 
-.home-link:hover {
-    transform: scale(1.08);
-    text-decoration: none !important;
-}
+
 
 .footer-row {
     position: sticky !important;

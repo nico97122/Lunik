@@ -1,14 +1,23 @@
 .page {
     position: relative;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-
-     a, .btn-link {
-        white-space: nowrap;
-        text-decoration: none;
+.home-link {
+    vertical-align:bottom;
+}
+    .home-link:hover {
+        transform: scale(1.08);
+        text-decoration: none !important;
     }
+
+a, .btn-link {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    text-decoration: none;
+}
 
 #blazor-error-ui {
     color-scheme: light only;

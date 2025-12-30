@@ -17,7 +17,7 @@
 <div class="page">
 
 
-    <main style="display: flex; flex-direction: column; min-height: fit-content;">
+    <main style="display: flex; flex-direction: column; min-height: 100vh;">
 
         @* Menu Mobile (Drawer) *@
         <MudHidden Breakpoint="Breakpoint.MdAndUp">
@@ -42,8 +42,8 @@
         <div id="navbar" class="top-row tropical-nav">
             <div class="nav-left-container">
                 <div>
-                    <div style="display: flex;">
-                        <a href="/" class="home-link">
+                    <div style="display: flex; align-items: center;">
+                        <a href="/" class="home-link ">
                             <div class="icon-class">
                                 <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
                             </div>
@@ -57,10 +57,10 @@
                 <MudHidden Breakpoint="Breakpoint.SmAndDown">
                     <div Class="navbar-tabs" style=" margin-left: 2rem">
                         <a href="/" class="tropical-navbar">@Word("Home")</a>
-                        <a href="/" class="tropical-navbar">@Word("Our Bungalows")</a>
-                        <a href="/" class="tropical-navbar">@Word("GuadeloupeName1")</a>
-                        <a href="/" class="tropical-navbar">@Word("Activities")</a>
-                        <a href="/" class="tropical-navbar">@Word("Contact")</a>
+                        <a href="/accommodation" class="tropical-navbar">@Word("Our accommodations")</a>
+                        <a href="/guadeloupe" class="tropical-navbar">@Word("GuadeloupeName1")</a>
+                        <a href="/activities" class="tropical-navbar">@Word("Activities")</a>
+                        <a href="/contact" class="tropical-navbar">@Word("Contact")</a>
                     </div>
                 </MudHidden>
             </div>
