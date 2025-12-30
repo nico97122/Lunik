@@ -108,10 +108,30 @@ h1:focus {
 .tropical-header {
     background: linear-gradient(135deg, #1f8c6f 0%, #004e89 100%);
     color: white;
-    padding: 1.5rem 1rem;
+    /* Padding responsive : 1rem sur mobile, jusqu'à 2rem sur desktop */
+    padding: clamp(1rem, 3vw, 2rem) 1rem;
     text-align: center;
     border-radius: 16px 16px 0 0;
 }
+
+    /* Titre "Le Belvédère..." (h3) : Rétrécit jusqu'à 1.2rem sur mobile */
+    .tropical-header .mud-typography-h3 {
+        font-size: clamp(1.2rem, 3vw, 5rem) !important;
+        line-height: 1.2;
+    }
+
+    /* Nom "WelcomeName1" (h2) : Rétrécit jusqu'à 1.5rem sur mobile */
+    .tropical-header .mud-typography-h2 {
+        font-size: clamp(1.5rem, 4vw, 3.75rem) !important;
+        margin-top: 0.5rem;
+    }
+
+    /* Sous-titre "has the pleasure to" */
+    .tropical-header .mud-typography-subtitle2 {
+        font-size: clamp(0.8rem, 1.5vw, 1rem) !important;
+        opacity: 0.9;
+        margin: 0.25rem 0;
+    }
 
 .tropical-navbar {
     color: white;
