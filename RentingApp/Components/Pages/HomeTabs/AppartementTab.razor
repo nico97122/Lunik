@@ -10,7 +10,7 @@
         @foreach (var gite in gites)
         {
             <MudItem xs="12" sm="6" md="4">
-                <MudCard Elevation="3" Class="h-100">
+                <MudCard Elevation="3" Class=" tropical-card ">
                     <MudCardMedia Image="@(string.IsNullOrEmpty(gite.ImageUrl) ? "https://via.placeholder.com/400x250" : gite.ImageUrl)" Height="200" />
                     <MudCardContent>
                         <MudText Typo="Typo.h5">@gite.Nom</MudText>

@@ -15,19 +15,64 @@
 <MudSnackbarProvider />
 
 <div class="page">
-    <main style="display: flex; flex-direction: column; min-height: 100vh;">
-        <div id="navbar" class="top-row tropical-nav" style="overflow: visible;">
-            <a href="/" class="brand-link">
-                <div class="icon-class">
-                    <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
+
+
+    <main style="display: flex; flex-direction: column; min-height: fit-content;">
+
+        @* Menu Mobile (Drawer) *@
+        <MudHidden Breakpoint="Breakpoint.MdAndUp">
+            @if (_drawerOpen)
+            {
+                <MudDrawer @bind-Open="@_drawerOpen" Anchor="Anchor.Right" Elevation="1" Variant="@DrawerVariant.Temporary">
+                    <MudDrawerHeader>
+                        <MudText Typo="Typo.h6">Menu</MudText>
+                    </MudDrawerHeader>
+                    <MudNavMenu>
+                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Home")</MudNavLink>
+                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Our Bungalows")</MudNavLink>
+                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("GuadeloupeName1")</MudNavLink>
+                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Activities")</MudNavLink>
+                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Contact")</MudNavLink>
+                        <MudNavLink Href="https://gitecannelle.com/" Target="_blank" Icon="@Icons.Material.Filled.Info">@Word("About")</MudNavLink>
+                    </MudNavMenu>
+                </MudDrawer>
+            }
+        </MudHidden>
+
+        <div id="navbar" class="top-row tropical-nav">
+            <div class="nav-left-container">
+                <div>
+                    <div style="display: flex;">
+                        <a href="/" class="home-link">
+                            <div class="icon-class">
+                                <img src="/lunikIconRound.png" alt="Logo" style="height: 140%; width: 140%; object-fit: cover;">
+                            </div>
+                        </a>
+                        <a href="/" style="margin-left:1rem">
+                            <MudText Class="nav-title-main " Style="color: white; font-weight: 700;vertical-align : middle;">Le Belvédère </MudText>
+                            <MudText Class="nav-title-sub" Style="color: white; font-weight: 700;vertical-align : middle;">de l'Autre-Bord</MudText>
+                        </a>
+                    </div>
                 </div>
-            </a>
-            <a href="/" class="brand-link">
-                <MudText Typo="Typo.h4" Style="color: white; font-weight: 700;">Le Belvédère de l'Autre-Bord</MudText>
-            </a>
+                <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                    <div Class="navbar-tabs" style=" margin-left: 2rem">
+                        <a href="/" class="tropical-navbar">@Word("Home")</a>
+                        <a href="/" class="tropical-navbar">@Word("Our Bungalows")</a>
+                        <a href="/" class="tropical-navbar">@Word("GuadeloupeName1")</a>
+                        <a href="/" class="tropical-navbar">@Word("Activities")</a>
+                        <a href="/" class="tropical-navbar">@Word("Contact")</a>
+                    </div>
+                </MudHidden>
+            </div>
 
             <div style="display: flex; align-items: center; gap: 1rem; position: relative;">
-                <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
+                @* Navigation Desktop (Masquée sur mobile) *@
+                <MudHidden Breakpoint="Breakpoint.SmAndDown">
+
+                    <a href="https://gitecannelle.com/" target="_blank" class="about-link">@Word("About")</a>
+                </MudHidden>
+
+                <MudMenu AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopLeft">
                     <ActivatorContent>
                         <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Inherit" Style="color: white;" />
                     </ActivatorContent>
@@ -40,11 +85,15 @@
                         }
                     </ChildContent>
                 </MudMenu>
-                <a href="https://gitecannelle.com/" target="_blank" class="tropical-link">@Word("About")</a>
+
+                @* Bouton Menu Mobile (Masqué sur Desktop) *@
+                <MudHidden Breakpoint="Breakpoint.MdAndUp">
+                    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" OnClick="@((e) => DrawerToggle())" Style="color: white;" />
+                </MudHidden>
             </div>
         </div>
 
-        <article class="content px-4">
+        <article class="content ">
             @Body
         </article>
 
@@ -59,3 +108,4 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+

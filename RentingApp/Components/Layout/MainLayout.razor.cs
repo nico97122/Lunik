@@ -3,12 +3,12 @@ using Microsoft.Extensions.Logging;
 
 namespace RentingApp.Components.Layout
 {
-    public partial class MainLayout :IAsyncDisposable
+    public partial class MainLayout : IAsyncDisposable
     {
-
+        bool _drawerOpen = false;
         protected override void OnInitialized()
         {
-            _logger.LogInformation( "MainLayout initialized with culture: " + _localizationService.GetCurrentCulture());
+            _logger.LogInformation("MainLayout initialized with culture: " + _localizationService.GetCurrentCulture());
             _localizationService.OnCultureChanged += StateHasChanged;
         }
 
@@ -24,6 +24,12 @@ namespace RentingApp.Components.Layout
         private string Word(string englishWord)
         {
             return _localizationService.TransalateFromEnglish(englishWord);
+        }
+        
+
+        void DrawerToggle()
+        {
+            _drawerOpen = !_drawerOpen;
         }
     }
 }

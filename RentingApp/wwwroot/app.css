@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.brand-link:hover {
+.home-link:hover {
     transform: scale(1.08);
     text-decoration: none !important;
 }
@@ -21,20 +21,25 @@
     flex-shrink: 0;
     box-shadow: 0 -4px 15px rgba(0, 78, 137, 0.2);
 }
+
 .top-row {
     position: sticky !important;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: space-between !important;
-    height: 70px;
     align-items: center;
     z-index: 1100;
+    border-bottom: 1px solid #d6d5d5;
+    height: fit-content;
+    top: 0;
 }
+
 main {
     display: flex;
     flex-direction: column;
 }
+
 article.content {
     flex: 1;
     overflow-y: auto;
@@ -42,10 +47,6 @@ article.content {
     min-height: 0;
 }
 
-.top-row {
-    position: sticky !important;
-    top: 75px;
-}
 .icon-class {
     width: 50px;
     height: 50px;
@@ -55,6 +56,7 @@ article.content {
     justify-content: center;
     overflow: hidden;
 }
+
 a:hover, .btn-link:hover {
     color: #ff8c5a;
 }
@@ -73,9 +75,6 @@ a:hover, .btn-link:hover {
         transform: translateY(-2px);
     }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #ff8c5a;
-}
 
 .content {
     padding-top: 1.1rem;
@@ -112,57 +111,107 @@ h1:focus {
 .tropical-header {
     background: linear-gradient(135deg, #1f8c6f 0%, #004e89 100%);
     color: white;
-    padding: 3rem 2rem;
+    padding: 1.5rem 1rem;
     text-align: center;
     border-radius: 16px 16px 0 0;
 }
 
-    .tropical-header h1 {
-        margin: 0;
-        font-size: 2.5rem;
-        font-weight: 700;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .tropical-header p {
-        margin: 0.5rem 0 0 0;
-        font-size: 1.1rem;
-        opacity: 0.95;
-    }
-
-.tropical-accent {
-    background: linear-gradient(135deg, #ff6b35 0%, #ffd89b 100%);
+.tropical-navbar {
     color: white;
-    padding: 2px 12px;
-    border-radius: 20px;
-    display: inline-block;
-    font-size: 0.9rem;
     font-weight: 600;
+    padding: 0rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.tropical-divider {
-    height: 4px;
-    background: linear-gradient(90deg, transparent, #ff6b35, transparent);
-    border: none;
-    margin: 2rem 0;
-    border-radius: 2px;
+    .tropical-navbar:hover {
+        background-color: rgba(255, 255, 255, 0.15); /* Léger fond blanc transparent */
+        color: var(--tropical-sand); /* Couleur sable définie dans votre thème */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+    }
+
+    .tropical-navbar:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+.tropical-navbar {
+    color: white;
+    /* Surcharge de la taille de police pour être responsive */
+    font-size: clamp(1.15rem, 1.25vw, 2em) !important;
+    padding: 0.5rem clamp(0.5rem, 1vw, 2rem) !important; /* Padding horizontal dynamique */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
 }
 
+    .tropical-navbar:hover {
+        background-color: rgba(255, 255, 255, 0.15); /* Léger fond blanc transparent */
+        color: var(--tropical-sand); /* Couleur sable définie dans votre thème */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+    }
+
+    .tropical-navbar:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+.navbar-tabs {
+    display: flex;
+    align-items: center;
+    gap: clamp(0rem, 1vw, 2rem);
+}
 .tropical-nav {
     background: linear-gradient(90deg, #004e89 0%, #1f8c6f 100%);
     box-shadow: 0 4px 15px rgba(0, 78, 137, 0.2);
 }
+.nav-left-container {
+    display: flex;
+    align-items: center;
+    padding: 0.1rem 0rem;
+    flex: 1; /* Prend l'espace disponible */
+}
 
-.tropical-link {
+/* Titre principal (Le Belvédère) */
+.nav-title-main {
+    font-size: clamp(1.75rem, 2vw, 3rem) !important; 
+}
+
+/* Sous-titre (de l'Autre-Bord) */
+.nav-title-sub {
+    font-size: clamp(0.8rem, 0.9vw, 1.15rem) !important; 
+}
+
+/* Conteneur des liens de navigation */
+.nav-links-container {
+    align-items: center;
+}
+
+
+.about-link {
     color: #ffd89b;
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
     display: inline-block;
 }
 
-    .tropical-link:hover {
+.about-link {
+    color: #ffd89b;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .about-link:hover {
         background-color: rgba(255, 107, 53, 0.2);
         color: #ff6b35;
         transform: translateX(2px);
@@ -218,31 +267,13 @@ h1:focus {
         border-color: #1f8c6f;
     }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-    text-align: start;
-}
-
-/* Animation tropicale */
-@keyframes tropical-glow {
-    0%, 100% {
-        box-shadow: 0 8px 32px rgba(255, 107, 53, 0.2);
-    }
-
-    50% {
-        box-shadow: 0 12px 48px rgba(255, 107, 53, 0.4);
-    }
-}
-
-.tropical-glow {
-    animation: tropical-glow 3s ease-in-out infinite;
-}
 
 .tab-row {
     position: sticky !important;
     z-index: 900;
     top: 0px;
-    
 }
+
 .mud-tabs {
     display: flex;
     flex-direction: column;
@@ -250,5 +281,4 @@ h1:focus {
 
 
 
-
-
+    
