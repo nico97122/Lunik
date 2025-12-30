@@ -1,5 +1,6 @@
 ﻿using _2_RentingModel;
 using Microsoft.Extensions.Logging;
+using System.Reflection.Metadata;
 
 namespace RentingApp.Components.Layout
 {
@@ -12,6 +13,10 @@ namespace RentingApp.Components.Layout
             _localizationService.OnCultureChanged += StateHasChanged;
         }
 
+         private void HandleCultureChange()
+        {
+            InvokeAsync(StateHasChanged);
+        }
         private void ChangeCulture(SupportedLanguagesEnum culture)
         {
             _localizationService.SetCulture(culture);

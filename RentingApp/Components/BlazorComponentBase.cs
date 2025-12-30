@@ -10,9 +10,13 @@ namespace RentingApp.Components
 
         protected override void OnInitialized()
         {
-            LocalizationService.OnCultureChanged += StateHasChanged;
+            LocalizationService.OnCultureChanged += HandleCultureChange;
         }
 
+        private void HandleCultureChange()
+        {
+            InvokeAsync(StateHasChanged);
+        }
         protected string Word(string englishWord)
         {
             return LocalizationService.TransalateFromEnglish(englishWord);
@@ -20,7 +24,7 @@ namespace RentingApp.Components
 
         public virtual ValueTask DisposeAsync()
         {
-            LocalizationService.OnCultureChanged -= StateHasChanged;
+            LocalizationService.OnCultureChanged -= HandleCultureChange;
             return default;
         }
     }
