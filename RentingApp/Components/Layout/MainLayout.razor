@@ -16,23 +16,22 @@
 
 <div class="page">
 
-
     <main style="display: flex; flex-direction: column; min-height: 100vh;">
 
         @* Menu Mobile (Drawer) *@
-        <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <MudHidden Breakpoint="Breakpoint.LgAndUp">
             @if (_drawerOpen)
             {
-                <MudDrawer @bind-Open="@_drawerOpen" Anchor="Anchor.Right" Elevation="1" Variant="@DrawerVariant.Temporary">
+                <MudDrawer @bind-Open="@_drawerOpen" Anchor="Anchor.Right" Elevation="1" Variant="@DrawerVariant.Temporary" Class="mudrawer-style">
                     <MudDrawerHeader>
                         <MudText Typo="Typo.h6">Menu</MudText>
                     </MudDrawerHeader>
                     <MudNavMenu>
-                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Home")</MudNavLink>
-                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Our Bungalows")</MudNavLink>
-                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("GuadeloupeName1")</MudNavLink>
-                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Activities")</MudNavLink>
-                        <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home">@Word("Contact")</MudNavLink>
+                        <MudNavLink Href=""  Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">@Word("Home")</MudNavLink>
+                        <MudNavLink Href="/accommodation" Icon="@Icons.Material.Filled.HolidayVillage">@Word("Our Bungalows")</MudNavLink>
+                        <MudNavLink Href="/guadeloupe" Icon="@Icons.Material.Filled.Flag">@Word("GuadeloupeName1")</MudNavLink>
+                        <MudNavLink Href="/activities" Icon="@Icons.Material.Filled.Man">@Word("Activities")</MudNavLink>
+                        <MudNavLink Href="/contact" Icon="@Icons.Material.Filled.Phone">@Word("Contact")</MudNavLink>
                         <MudNavLink Href="https://gitecannelle.com/" Target="_blank" Icon="@Icons.Material.Filled.Info">@Word("About")</MudNavLink>
                     </MudNavMenu>
                 </MudDrawer>
@@ -54,21 +53,20 @@
                         </a>
                     </div>
                 </div>
-                <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                <MudHidden Breakpoint="Breakpoint.MdAndDown">
                     <div Class="navbar-tabs" style=" margin-left: 2rem">
-                        <a href="/" class="tropical-navbar">@Word("Home")</a>
-                        <a href="/accommodation" class="tropical-navbar">@Word("Our accommodations")</a>
-                        <a href="/guadeloupe" class="tropical-navbar">@Word("GuadeloupeName1")</a>
-                        <a href="/activities" class="tropical-navbar">@Word("Activities")</a>
-                        <a href="/contact" class="tropical-navbar">@Word("Contact")</a>
+                        <NavLink href="/" Match="NavLinkMatch.All" class="tropical-navbar">@Word("Home")</NavLink>
+                        <NavLink href="/accommodation" class="tropical-navbar">@Word("Our accommodations")</NavLink>
+                        <NavLink href="/guadeloupe" class="tropical-navbar">@Word("GuadeloupeName1")</NavLink>
+                        <NavLink href="/activities" class="tropical-navbar">@Word("Activities")</NavLink>
+                        <NavLink href="/contact" class="tropical-navbar">@Word("Contact")</NavLink>
                     </div>
                 </MudHidden>
             </div>
 
             <div style="display: flex; align-items: center; gap: 1rem; position: relative;">
                 @* Navigation Desktop (Masquée sur mobile) *@
-                <MudHidden Breakpoint="Breakpoint.SmAndDown">
-
+                <MudHidden Breakpoint="Breakpoint.MdAndDown">
                     <a href="https://gitecannelle.com/" target="_blank" class="about-link">@Word("About")</a>
                 </MudHidden>
 
@@ -87,7 +85,7 @@
                 </MudMenu>
 
                 @* Bouton Menu Mobile (Masqué sur Desktop) *@
-                <MudHidden Breakpoint="Breakpoint.MdAndUp">
+                <MudHidden Breakpoint="Breakpoint.LgAndUp">
                     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" OnClick="@((e) => DrawerToggle())" Style="color: white;" />
                 </MudHidden>
             </div>

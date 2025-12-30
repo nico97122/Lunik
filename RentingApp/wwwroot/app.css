@@ -148,7 +148,11 @@ h1:focus {
     align-items: center;
     justify-content: center;
 }
-
+    .tropical-navbar.active {
+        background-color: rgba(255, 255, 255, 0.2); /* Fond légèrement plus visible */
+        color: var(--tropical-sand); /* Texte couleur sable */
+        box-shadow: inset 0 -2px 0 0 var(--tropical-sand); /* Petite ligne en bas */
+    }
     .tropical-navbar:hover {
         background-color: rgba(255, 255, 255, 0.15); /* Léger fond blanc transparent */
         color: var(--tropical-sand); /* Couleur sable définie dans votre thème */
@@ -164,7 +168,7 @@ h1:focus {
 .navbar-tabs {
     display: flex;
     align-items: center;
-    gap: clamp(0rem, 1vw, 2rem);
+    gap: clamp(0rem, 0.35vw, 1rem);
 }
 .tropical-nav {
     background: linear-gradient(90deg, #004e89 0%, #1f8c6f 100%);
@@ -277,5 +281,33 @@ h1:focus {
 }
 
 
+.mudrawer-style {
+    /* Même dégradé que la navbar et le footer */
+    background: linear-gradient(180deg, #004e89 0%, #1f8c6f 100%) !important;
+    color: white !important;
+}
 
-    
+    /* Couleur du titre "Menu" */
+    .mudrawer-style .mud-drawer-header {
+        color: white !important;
+        font-weight: 700;
+    }
+
+    /* Style des liens de navigation */
+    .mudrawer-style .mud-nav-link {
+        color: white !important;
+        transition: all 0.3s ease;
+    }
+
+        /* Style des icônes */
+        .mudrawer-style .mud-nav-link .mud-icon-root {
+            color: var(--tropical-sand) !important; /* Couleur sable pour les icônes */
+        }
+
+        /* Effet de survol sur les liens */
+        .mudrawer-style .mud-nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            color: var(--tropical-sand) !important;
+            padding-left: 24px; /* Petit effet de décalage */
+        }
+

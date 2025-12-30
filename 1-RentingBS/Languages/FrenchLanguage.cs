@@ -21,7 +21,8 @@ namespace _1_RentingBS.Languages
             { "GuadeloupeName1", "La Guadeloupe" },
             { "All rights reserved", "Tous droits réservés" },
             {"has the pleasure to", "vous souhaite la" },
-            {"Treat yourself to a unique experience of comfort and relaxation", "Offrez-vous une expérience unique de confort et de détente" },
+            {"Activities", "Activités" },
+            {"Treat yourself with a unique experience of comfort and relaxation", "Offrez-vous une expérience unique de confort et de détente" },
             // Add more translations as needed
         };
         public override string GetTranslation(string englishKey)
