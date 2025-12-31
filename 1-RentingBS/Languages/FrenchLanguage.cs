@@ -22,6 +22,7 @@ namespace _1_RentingBS.Languages
             { "All rights reserved", "Tous droits réservés" },
             {"has the pleasure to", "vous souhaite la" },
             {"Activities", "Activités" },
+            {"Our accommodations", "Nos Logis" },
             {"Treat yourself with a unique experience of comfort and relaxation", "Offrez-vous une expérience unique de confort et de détente" },
             // Add more translations as needed
         };

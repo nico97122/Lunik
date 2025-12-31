@@ -11,17 +11,17 @@ namespace _1_RentingBS
             {
                 new Gite {
                     Id = 1,
-                    Nom = "Villa Colibri",
+                    Nom = "Le Bel Horizon",
                     DescriptionCourte = "Un havre de paix vue mer.",
                     DescriptionLongue = "Située à Deshaies, la Villa Colibri offre une vue imprenable sur la mer des Caraïbes. Piscine à débordement et jardin tropical.",
                     PrixNuit = 120,
-                    ImageUrl = "images/gites/gite1.jpg", 
+                    ImageUrl = "images/gites/gite1.jpg",
                     Capacite = 4,
                     Equipements = new List<string> { "Wifi", "Climatisation", "Piscine", "Parking" }
                 },
                 new Gite {
                     Id = 2,
-                    Nom = "Bungalow Lagon",
+                    Nom = "Vision marine",
                     DescriptionCourte = "Les pieds dans l'eau à Saint-François.",
                     DescriptionLongue = "Accès direct au lagon. Idéal pour les amateurs de kitesurf et de farniente. Proche de la marina et du golf.",
                     PrixNuit = 95,
@@ -31,14 +31,44 @@ namespace _1_RentingBS
                 },
                 new Gite {
                     Id = 3,
-                    Nom = "Kaz' Tropik",
+                    Nom = "Panorama",
                     DescriptionCourte = "Authenticité au cœur de la forêt tropicale.",
                     DescriptionLongue = "Nichée sur la route de la Traversée, cette case créole rénovée vous plonge dans la nature luxuriante de la Guadeloupe.",
                     PrixNuit = 80,
                     ImageUrl = "images/gites/gite3.jpeg",
                     Capacite = 6,
                     Equipements = new List<string> { "Barbecue", "Jardin", "Randonnée", "Hamac" }
-                }
+                },
+                 new Gite {
+                    Id = 4,
+                    Nom = "La Vue du large",
+                    DescriptionCourte = "Un havre de paix vue mer.",
+                    DescriptionLongue = "Située à Deshaies, la Villa Colibri offre une vue imprenable sur la mer des Caraïbes. Piscine à débordement et jardin tropical.",
+                    PrixNuit = 120,
+                    ImageUrl = "images/gites/gite1.jpg",
+                    Capacite = 4,
+                    Equipements = new List<string> { "Wifi", "Climatisation", "Piscine", "Parking" }
+                },
+                new Gite {
+                    Id = 5,
+                    Nom = "Le Mirador",
+                    DescriptionCourte = "Un havre de paix vue mer.",
+                    DescriptionLongue = "Située à Deshaies, la Villa Colibri offre une vue imprenable sur la mer des Caraïbes. Piscine à débordement et jardin tropical.",
+                    PrixNuit = 120,
+                    ImageUrl = "images/gites/gite1.jpg",
+                    Capacite = 4,
+                    Equipements = new List<string> { "Wifi", "Climatisation", "Piscine", "Parking" }
+                },
+                new Gite {
+                    Id = 6,
+                    Nom = "Le Bel Horizon",
+                    DescriptionCourte = "Un havre de paix vue mer.",
+                    DescriptionLongue = "Située à Deshaies, la Villa Colibri offre une vue imprenable sur la mer des Caraïbes. Piscine à débordement et jardin tropical.",
+                    PrixNuit = 120,
+                    ImageUrl = "images/gites/gite1.jpg",
+                    Capacite = 4,
+                    Equipements = new List<string> { "Wifi", "Climatisation", "Piscine", "Parking" }
+                },
             };
         }
 
