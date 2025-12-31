@@ -10,7 +10,7 @@ namespace RentingApp.Components.Layout
         protected override void OnInitialized()
         {
             _logger.LogInformation("MainLayout initialized with culture: " + _localizationService.GetCurrentCulture());
-            _localizationService.OnCultureChanged += StateHasChanged;
+            _localizationService.OnCultureChanged += HandleCultureChange;
         }
 
          private void HandleCultureChange()
@@ -23,7 +23,7 @@ namespace RentingApp.Components.Layout
         }
         public ValueTask DisposeAsync()
         {
-            _localizationService.OnCultureChanged -= StateHasChanged;
+            _localizationService.OnCultureChanged -= HandleCultureChange;
             return default;
         }
         private string Word(string englishWord)

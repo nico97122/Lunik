@@ -24,6 +24,8 @@ namespace _1_RentingBS.Languages
             {"Activities", "Activités" },
             {"Our accommodations", "Nos Logis" },
             {"Treat yourself with a unique experience of comfort and relaxation", "Offrez-vous une expérience unique de confort et de détente" },
+            {"An exeptional view", "Une vue exceptionnelle" },
+            {"Next to L'Autre Bord beach", "Proche de la plage de l'Autre Bord" },
             // Add more translations as needed
         };
         public override string GetTranslation(string englishKey)

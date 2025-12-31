@@ -11,13 +11,46 @@
         private string _targetText = "";// Texte pour la 1ere image
 
         private string _displayedText2 = "";
-        private string _targetText2 = "Une vue exceptionnelle"; // Texte pour la 2ème image
+        private string _targetText2 = ""; // Texte pour la 2ème image
 
         private string _displayedText3 = "";
-        private string _targetText3 = "Proche de la plage de l'Autre Bord"; // Texte pour la 3ème image
+        private string _targetText3 = ""; // Texte pour la 3ème image
 
         private string _displayedText4 = "";
         private string _targetText4 = ""; // Texte pour la 4ème image
+
+        protected override void OnInitialized() 
+        {
+            base.OnInitialized();
+
+            //init des textes a afficher sur les images
+            UpdateTargetTexts();
+
+            // on s'abonne a la culture changed , le state.haschanged suffit pas
+            LocalizationService.OnCultureChanged += HandleLanguageChanged;
+        }
+        public override async ValueTask DisposeAsync()
+        {
+            LocalizationService.OnCultureChanged -= HandleLanguageChanged;
+            await base.DisposeAsync();
+        }
+
+        private void UpdateTargetTexts()
+        {
+            _targetText2 = Word("An exeptional view");
+            _targetText3 = Word("Next to L'Autre Bord beach");
+        }
+
+        /// <summary>
+        /// Déclenché quand la langue change. Met à jour les textes et relance l'animation.
+        /// </summary>
+        private void HandleLanguageChanged()
+        {
+            UpdateTargetTexts();
+
+            // On relance l'animation sur la slide actuelle pour afficher le texte dans la nouvelle langue
+            InvokeAsync(() => StartAnimationForIndex(_selectedIndex));
+        }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {

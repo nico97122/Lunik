@@ -2,68 +2,82 @@
 @page "/"
 
 <MudStack AlignItems="AlignItems.Center" Style="justify-content: center; padding: 1rem;">
-    <div class="tropical-header" style=" width: 100%">
-        <MudText Typo="Typo.h3" Class="font-weight-bold">Le Belvédère de l'Autre-Bord </MudText>
-        <MudText Typo="Typo.subtitle2">@Word("has the pleasure to")</MudText>
-        <MudText Typo="Typo.h2">@Word("WelcomeName1")</MudText>
-    </div>
-    <div style="width: 100%;">
-        @*Liaison de l'index et de l'événement de changement *@
-        <MudCarousel ShowArrows="true"
-                     AutoCycle="true"
-                     TData="object"
-                     Style="min-height: 400px; width: 100%;"
-                     SelectedIndex="@_selectedIndex"
-                     SelectedIndexChanged="OnSlideChanged">
 
-            @* --- SLIDE 1 --- *@
-            <MudCarouselItem Transition="Transition.Slide">
-                <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
-                    <img src="/images/accueil/accueil.jpg" class="tropical-image" alt="accueil">
-                    <MudText Typo="Typo.subtitle1"
-                             Style="position: absolute; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
-                        @_displayedText
-                    </MudText>
+    @* --- CONTENEUR CARD --- *@
+    <MudCard Class="accueil-card" Style="width: 100%; max-width: 1200px; padding: 1rem;">
+        <MudCardContent>
+            <MudStack Spacing="1" AlignItems="AlignItems.Center">
+
+                @* 1. HEADER *@
+                <div class="tropical-header" style="width: 100%;">
+                    <MudText Typo="Typo.h3" Class="font-weight-bold">Le Belvédère de l'Autre-Bord </MudText>
+                    <MudText Typo="Typo.subtitle2">@Word("has the pleasure to")</MudText>
+                    <MudText Typo="Typo.h2">@Word("WelcomeName1")</MudText>
                 </div>
-            </MudCarouselItem>
 
-            @* --- SLIDE 2 --- *@
-            <MudCarouselItem Transition="Transition.Slide">
-                <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
-                    <img src="/images/accueil/accueil1.jpg" class="tropical-image" alt="accueil 1">
-                    @* Texte pour la slide 2 *@
-                    <MudText Typo="Typo.subtitle1"
-                             Style="position: absolute;top:10%; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
-                        @_displayedText2
-                    </MudText>
+                @* 2. CARROUSEL *@
+                <div class="tropical-carousel-frame" style="width: 100%;">
+                    <MudCarousel ShowArrows="true"
+                                 AutoCycle="true"
+                                 TData="object"
+                                 Style="height: 550px; width: 100%;"
+                                 SelectedIndex="@_selectedIndex"
+                                 SelectedIndexChanged="OnSlideChanged">
+
+                        @* --- SLIDE 1 --- *@
+                        <MudCarouselItem Transition="Transition.Slide">
+                            <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
+                                <img src="/images/accueil/accueil.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="accueil">
+                                <MudText Typo="Typo.subtitle1"
+                                         Style="position: absolute; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
+                                    @_displayedText
+                                </MudText>
+                            </div>
+                        </MudCarouselItem>
+
+                        @* --- SLIDE 2 --- *@
+                        <MudCarouselItem Transition="Transition.Slide">
+                            <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
+                                <img src="/images/accueil/accueil1.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="accueil 1">
+                                <MudText Typo="Typo.subtitle1"
+                                         Style="position: absolute;top:10%; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
+                                    @_displayedText2
+                                </MudText>
+                            </div>
+                        </MudCarouselItem>
+
+                        @* --- SLIDE 3 --- *@
+                        <MudCarouselItem Transition="Transition.Slide">
+                            <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
+                                <img src="/images/accueil/accueil2.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="accueil 2">
+                                <MudText Typo="Typo.subtitle1"
+                                         Style="position: absolute; bottom: 4rem;right:25%; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
+                                    @_displayedText3
+                                </MudText>
+                            </div>
+                        </MudCarouselItem>
+
+                        @* --- SLIDE 4 --- *@
+                        <MudCarouselItem Transition="Transition.Slide">
+                            <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
+                                <img src="/images/accueil/accueil3.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="accueil 3">
+                                <MudText Typo="Typo.subtitle1"
+                                         Style="position: absolute; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
+                                    @_displayedText4
+                                </MudText>
+                            </div>
+                        </MudCarouselItem>
+
+                    </MudCarousel>
                 </div>
-            </MudCarouselItem>
 
-            @* --- SLIDE 3 --- *@
-            <MudCarouselItem Transition="Transition.Slide">
-                <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
-                    <img src="/images/accueil/accueil2.jpg" class="tropical-image" alt="accueil 2">
-                    @* Texte pour la slide 3 - Positionné en bas à droite *@
-                    <MudText Typo="Typo.subtitle1"
-                             Style="position: absolute; bottom: 4rem;right:35%; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
-                        @_displayedText3
-                    </MudText>
-                </div>
-            </MudCarouselItem>
+                @* 3. TEXTE DU BAS *@
+                <MudText Typo="Typo.body2" Align="Align.Center" Class="font-weight-500" Style="margin-bottom: 1rem;">
+                    @Word("Treat yourself with a unique experience of comfort and relaxation")
+                </MudText>
 
-            @* --- SLIDE 4 --- *@
-            <MudCarouselItem Transition="Transition.Slide">
-                <div class="d-flex align-center justify-center" style="width: 100%; height: 100%; position: relative;">
-                    <img src="/images/accueil/accueil3.jpg" class="tropical-image" alt="accueil 3">
-                    @* Texte pour la slide 4 *@
-                    <MudText Typo="Typo.subtitle1"
-                             Style="position: absolute; color: white; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); z-index: 10; pointer-events: none;">
-                        @_displayedText4
-                    </MudText>
-                </div>
-            </MudCarouselItem>
+            </MudStack>
+        </MudCardContent>
+    </MudCard>
 
-        </MudCarousel>
-    </div>
-    <MudText Typo="Typo.body2" Align="Align.Center" Class="font-weight-500" Style="margin-bottom: 1rem;">@Word("Treat yourself to a unique experience of comfort and relaxation")</MudText>
 </MudStack>
