@@ -314,12 +314,13 @@ h1:focus {
 /* Cadre pour mettre en valeur le carrousel */
 .tropical-carousel-frame {
     border-radius: 24px; /* Coins bien arrondis */
-    border: 6px solid  var(--tropical-sky); /* Bordure blanche épaisse */
+    border: 6px solid var(--tropical-sky); /* Bordure blanche épaisse */
     box-shadow: 0 15px 40px rgba(0, 78, 137, 0.25); /* Ombre portée profonde (couleur teal du thème) */
     overflow: hidden; /* Coupe tout ce qui dépasse des bords arrondis */
     background-color: var(--tropical-sky); /* Fond bleu ciel si l'image ne remplit pas tout */
     margin: 1rem 0; /* Un peu d'espace vertical */
     position: relative;
+    aspect-ratio: 4/3;
 }
     .tropical-carousel-frame:hover {
         box-shadow: 0 12px 48px rgba(255, 107, 53, 0.15);
@@ -329,5 +330,5 @@ h1:focus {
     .tropical-carousel-frame .tropical-image {
         box-shadow: none; /* On enlève l'ombre de l'image car le cadre en a déjà une */
         border-radius: 0; /* On laisse le cadre gérer l'arrondi */
-        object-fit: cover; /* L'image remplit tout l'espace (peut couper un peu les bords) */
+        object-fit:contain; 
     }
