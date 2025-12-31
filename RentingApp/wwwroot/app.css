@@ -1,86 +1,135 @@
-
 .page {
+    /* Définit un dégradé linéaire en arrière-plan allant du gris clair au bleu gris */
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* Utilise Flexbox pour la mise en page globale */
     display: flex;
 }
 
 .footer-row {
+    /* Rend le pied de page collant en bas de l'écran */
     position: sticky !important;
+    /* Positionne le pied de page tout en bas */
     bottom: 0px;
+    /* Applique un dégradé linéaire horizontal du bleu foncé au vert tropical */
     background: linear-gradient(90deg, #004e89 0%, #1f8c6f 100%);
+    /* Fixe la hauteur du pied de page à 30 pixels */
     height: 30px;
+    /* Utilise Flexbox pour aligner le contenu interne */
     display: flex;
+    /* Centre verticalement les éléments */
     align-items: center;
+    /* Centre horizontalement les éléments */
     justify-content: center;
+    /* Définit la couleur du texte en blanc */
     color: white;
+    /* Empêche le pied de page de rétrécir si l'espace manque */
     flex-shrink: 0;
+    /* Ajoute une ombre portée vers le haut pour donner de la profondeur */
     box-shadow: 0 -4px 15px rgba(0, 78, 137, 0.2);
 }
 
 .top-row {
+    /* Rend la barre supérieure collante en haut de l'écran */
     position: sticky !important;
+    /* Empêche la barre de rétrécir */
     flex-shrink: 0;
+    /* Utilise Flexbox pour l'alignement */
     display: flex;
+    /* Centre verticalement les éléments */
     align-items: center;
+    /* Espacer les éléments aux extrémités (gauche/droite) */
     justify-content: space-between !important;
+    /* Assure le centrage vertical (redondant avec la ligne précédente mais sécurisant) */
     align-items: center;
+    /* Définit un ordre d'empilement élevé pour rester au-dessus du contenu */
     z-index: 1100;
+    /* Ajoute une bordure grise en bas */
     border-bottom: 1px solid #d6d5d5;
+    /* La hauteur s'adapte au contenu */
     height: fit-content;
+    /* Colle l'élément tout en haut */
     top: 0;
 }
 
 main {
+    /* Utilise Flexbox pour la zone principale */
     display: flex;
+    /* Organise les éléments en colonne (verticalement) */
     flex-direction: column;
 }
 
 article.content {
+    /* Prend tout l'espace disponible restant (flex-grow: 1) */
     flex: 1;
+    /* Active le défilement vertical si le contenu dépasse */
     overflow-y: auto;
+    /* Cache le dépassement horizontal */
     overflow-x: hidden;
+    /* Permet au conteneur de rétrécir en dessous de sa taille de contenu minimale */
     min-height: 0;
 }
 
 .icon-class {
+    /* Largeur fixe de l'icône */
     width: 70px;
+    /* Hauteur fixe de l'icône */
     height: 70px;
+    /* Rend l'élément parfaitement rond */
     border-radius: 50%;
+    /* Utilise Flexbox pour centrer l'image à l'intérieur */
     display: flex;
+    /* Centre verticalement */
     align-items: center;
+    /* Centre horizontalement */
     justify-content: center;
+    /* Masque tout ce qui dépasse du cercle */
     overflow: hidden;
 }
 
 a:hover, .btn-link:hover {
+    /* Change la couleur des liens au survol en orange tropical */
     color: #ff8c5a;
 }
 
 .btn-primary {
+    /* Couleur du texte en blanc */
     color: #fff;
+    /* Dégradé orange pour le fond du bouton */
     background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    /* Supprime la bordure par défaut */
     border: none;
+    /* Ajoute une ombre portée orange */
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    /* Anime toutes les propriétés changées sur 0.3 secondes */
     transition: all 0.3s ease;
 }
 
     .btn-primary:hover {
+        /* Inverse légèrement le dégradé au survol */
         background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
+        /* Agrandit l'ombre pour un effet de soulèvement */
         box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        /* Déplace le bouton de 2px vers le haut */
         transform: translateY(-2px);
     }
 
 h1:focus {
+    /* Supprime le contour de focus par défaut sur les titres h1 */
     outline: none;
 }
+
 .accueil-card {
+    /* Fond blanc avec légère transparence et dégradé subtil */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(230, 242, 255, 0.9));
+    /* Arrondit les coins de la carte */
     border-radius: 16px;
+    /* Ombre portée bleue légère */
     box-shadow: 0 8px 32px rgba(0, 78, 137, 0.1);
+    /* Bordure fine semi-transparente */
     border: 1px solid rgba(31, 140, 111, 0.1);
 }
 
-/* Thème tropical - Couleurs */
+/* Thème tropical - Définition des variables de couleurs */
 :root {
     --tropical-orange: #ff6b35;
     --tropical-gold: #f7931e;
@@ -90,221 +139,297 @@ h1:focus {
     --tropical-sky: #e6f2ff;
 }
 
-/* Composants tropicaux */
+/* Composants tropicaux - Style générique de carte */
 .tropical-card {
+    /* Fond dégradé blanc vers bleu très clair */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(230, 242, 255, 0.9));
+    /* Coins arrondis */
     border-radius: 16px;
+    /* Ombre portée */
     box-shadow: 0 8px 32px rgba(0, 78, 137, 0.1);
+    /* Bordure fine */
     border: 1px solid rgba(31, 140, 111, 0.1);
+    /* Transition douce pour les effets de survol */
     transition: all 0.3s ease;
 }
 
-
 .tropical-header {
+    /* Fond dégradé vert vers bleu */
     background: linear-gradient(135deg, #1f8c6f 0%, #004e89 100%);
+    /* Texte blanc */
     color: white;
-    /* Padding responsive : 1rem sur mobile, jusqu'à 2rem sur desktop */
+    /* Padding dynamique qui s'adapte à la taille de l'écran (min 1rem, max 2rem) */
     padding: clamp(1rem, 3vw, 2rem) 1rem;
+    /* Centre le texte */
     text-align: center;
+    /* Arrondit uniquement les coins supérieurs */
     border-radius: 16px 16px 0 0;
+    /* Ombre portée pour donner du relief */
     box-shadow: 0 15px 35px rgba(0, 78, 137, 0.3);
 }
+
     .tropical-header:hover {
+        /* Change l'ombre au survol pour un effet lumineux */
         box-shadow: 0 12px 48px var(--tropical-sky);
+        /* Soulève légèrement l'en-tête */
         transform: translateY(-4px);
     }
 
-    /* Titre "Le Belvédère..." (h3) : Rétrécit jusqu'à 1.2rem sur mobile */
+    /* Titre "Le Belvédère..." (h3) */
     .tropical-header .mud-typography-h3 {
+        /* Taille de police responsive (min 1.2rem, max 5rem) */
         font-size: clamp(1.2rem, 3vw, 5rem) !important;
+        /* Hauteur de ligne serrée */
         line-height: 1.2;
     }
 
-    /* Nom "WelcomeName1" (h2) : Rétrécit jusqu'à 1.5rem sur mobile */
+    /* Nom "WelcomeName1" (h2) */
     .tropical-header .mud-typography-h2 {
+        /* Taille de police responsive */
         font-size: clamp(1.5rem, 4vw, 3.75rem) !important;
+        /* Marge au-dessus */
         margin-top: 0.5rem;
     }
 
     /* Sous-titre "has the pleasure to" */
     .tropical-header .mud-typography-subtitle2 {
+        /* Taille de police responsive */
         font-size: clamp(0.8rem, 1.5vw, 1rem) !important;
+        /* Légère transparence */
         opacity: 0.9;
+        /* Marges verticales */
         margin: 0.25rem 0;
     }
 
 .tropical-navbar-item {
+    /* Couleur du texte blanc */
     color: white;
+    /* Taille de police responsive */
     font-size: clamp(1.15rem, 1.25vw, 2em) !important;
-    padding: 0.5rem clamp(0.5rem, 1vw, 2rem) !important; /* Padding horizontal dynamique */
+    /* Padding responsive */
+    padding: 0.5rem clamp(0.5rem, 1vw, 2rem) !important;
+    /* Coins arrondis */
     border-radius: 8px;
+    /* Transition douce */
     transition: all 0.3s ease;
+    /* Pas de soulignement */
     text-decoration: none;
+    /* Affichage en ligne flexible */
     display: inline-flex;
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    /* Empêche le texte de passer à la ligne */
+    white-space: nowrap;
+    /* Centre verticalement */
     align-items: center;
+    /* Centre horizontalement */
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1); /* Fond blanc transparent (10%) */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure fine semi-transparente */
-    backdrop-filter: blur(4px); /* Effet de flou d'arrière-plan */
-    margin: 0 0.25rem; /* Petit espacement entre les boutons */
+    /* Fond blanc transparent (effet verre) */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Bordure fine semi-transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Flou d'arrière-plan (effet verre dépoli) */
+    backdrop-filter: blur(4px);
+    /* Espacement entre les boutons */
+    margin: 0 0.25rem;
 }
 
 .tropical-navbar-item:hover {
-    background-color: rgba(255, 255, 255, 0.15); /* Léger fond blanc transparent */
-    color: var(--tropical-sand); /* Couleur sable définie dans votre thème */
+    /* Fond un peu plus opaque au survol */
+    background-color: rgba(255, 255, 255, 0.15);
+    /* Texte couleur sable */
+    color: var(--tropical-sand);
+    /* Soulèvement */
     transform: translateY(-2px);
+    /* Ombre portée */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Pas de soulignement */
     text-decoration: none;
 }
 
     .tropical-navbar-item.active {
-        background-color: rgba(255, 255, 255, 0.2); /* Fond légèrement plus visible */
-        color: var(--tropical-sand); /* Texte couleur sable */
-        box-shadow: inset 0 -2px 0 0 var(--tropical-sand); /* Petite ligne en bas */
+        /* Fond plus visible pour l'élément actif */
+        background-color: rgba(255, 255, 255, 0.2);
+        /* Texte couleur sable */
+        color: var(--tropical-sand);
+        /* Ligne intérieure en bas pour marquer l'activation */
+        box-shadow: inset 0 -2px 0 0 var(--tropical-sand);
     }
 
-
 .tropical-nav {
+    /* Dégradé de fond pour la barre de navigation */
     background: linear-gradient(90deg, #004e89 0%, #1f8c6f 100%);
-    box-shadow: 0 4px 15px rgba(0, 78, 137, 0.2);
-    background: linear-gradient(90deg, #004e89 0%, #1f8c6f 100%);
-    /* Ombre plus prononcée et plus large pour un meilleur effet de profondeur */
+    /* Ombre portée prononcée pour la profondeur */
     box-shadow: 0 8px 24px rgba(0, 78, 137, 0.4);
-    /*petite bordure en bas pour la netteté */
+    /* Bordure fine en bas pour la netteté */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .nav-left-container {
+    /* Flexbox pour aligner logo et titres */
     display: flex;
+    /* Centre verticalement */
     align-items: center;
+    /* Padding vertical très léger */
     padding: 0.1rem 0rem;
-    flex: 1; /* Prend l'espace disponible */
+    /* Prend tout l'espace disponible */
+    flex: 1;
 }
 
 /* Titre principal (Le Belvédère) */
 .nav-title-main {
+    /* Taille de police responsive */
     font-size: clamp(1.75rem, 2vw, 3rem) !important; 
 }
 
 /* Sous-titre (de l'Autre-Bord) */
 .nav-title-sub {
+    /* Taille de police responsive */
     font-size: clamp(0.8rem, 0.9vw, 1.15rem) !important; 
 }
 
 /* Conteneur des liens de navigation */
 .nav-links-container {
+    /* Centre les liens verticalement */
     align-items: center;
 }
 
-
 .about-link {
+    /* Couleur sable */
     color: #ffd89b;
+    /* Pas de soulignement */
     text-decoration: none;
+    /* Padding interne */
     padding: 0.5rem 1rem;
+    /* Coins arrondis */
     border-radius: 8px;
+    /* Transition douce */
     transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.about-link {
-    color: #ffd89b;
-    text-decoration: none;
+    /* Comportement de bloc en ligne */
     display: inline-block;
 }
 
     .about-link:hover {
+        /* Fond orange transparent au survol */
         background-color: rgba(255, 107, 53, 0.2);
+        /* Texte orange vif */
         color: #ff6b35;
+        /* Décalage vers la droite */
         transform: translateX(2px);
     }
 
 /* Images tropicales */
 .tropical-image {
+    /* Coins arrondis */
     border-radius: 12px;
+    /* Ombre portée */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    /* L'image s'adapte sans être déformée */
     object-fit: contain;
+    /* Transition pour le zoom */
     transition: transform 0.3s ease;
+    /* Prend toute la largeur */
     width: 100%;
+    /* Prend toute la hauteur */
     height: 100%;
 }
 
     .tropical-image:hover {
+        /* Zoom léger au survol */
         transform: scale(1.02);
     }
 
-
-/* Validation */
+/* Validation - Champ valide modifié */
 .valid.modified:not([type=checkbox]) {
+    /* Contour vert */
     outline: 2px solid #1f8c6f;
 }
 
+/* Validation - Champ invalide */
 .invalid {
+    /* Contour orange */
     outline: 2px solid #ff6b35;
 }
 
+/* Message de validation */
 .validation-message {
+    /* Texte orange */
     color: #ff6b35;
+    /* Gras moyen */
     font-weight: 500;
 }
 
+/* Gestion des erreurs Blazor */
 .blazor-error-boundary {
+    /* Fond dégradé orange */
     background: linear-gradient(90deg, #ff6b35, #f7931e);
+    /* Padding */
     padding: 1rem 1rem 1rem 3.7rem;
+    /* Texte blanc */
     color: white;
+    /* Coins arrondis */
     border-radius: 8px;
+    /* Ombre portée */
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
     .blazor-error-boundary::after {
+        /* Texte par défaut en cas d'erreur */
         content: "Une erreur s'est produite.";
     }
 
+/* Checkbox personnalisé */
 .darker-border-checkbox.form-check-input {
+    /* Bordure verte */
     border-color: #1f8c6f;
 }
 
     .darker-border-checkbox.form-check-input:checked {
+        /* Fond vert si coché */
         background-color: #1f8c6f;
+        /* Bordure verte si coché */
         border-color: #1f8c6f;
     }
 
-
 .tab-row {
+    /* Reste collé en haut */
     position: sticky !important;
+    /* Au-dessus du reste */
     z-index: 900;
+    /* Position 0 */
     top: 0px;
 }
 
 .mud-tabs {
+    /* Flexbox en colonne */
     display: flex;
     flex-direction: column;
 }
 
-
+/* Style du menu mobile (Drawer) */
 .mudrawer-style {
     /* Même dégradé que la navbar et le footer */
     background: linear-gradient(180deg, #004e89 0%, #1f8c6f 100%) !important;
+    /* Texte blanc */
     color: white !important;
 }
 
-    /* Couleur du titre "Menu" */
+    /* Couleur du titre "Menu" dans le drawer */
     .mudrawer-style .mud-drawer-header {
         color: white !important;
         font-weight: 700;
     }
 
-    /* Style des liens de navigation */
+    /* Style des liens de navigation dans le drawer */
     .mudrawer-style .mud-nav-link {
         color: white !important;
         transition: all 0.3s ease;
     }
 
-        /* Style des icônes */
+        /* Style des icônes dans le drawer */
         .mudrawer-style .mud-nav-link .mud-icon-root {
-            color: var(--tropical-sand) !important; /* Couleur sable pour les icônes */
+            color: var(--tropical-sand) !important; /* Couleur sable */
         }
 
-        /* Effet de survol sur les liens */
+        /* Effet de survol sur les liens du drawer */
         .mudrawer-style .mud-nav-link:hover {
             background-color: rgba(255, 255, 255, 0.15) !important;
             color: var(--tropical-sand) !important;
@@ -313,22 +438,37 @@ h1:focus {
 
 /* Cadre pour mettre en valeur le carrousel */
 .tropical-carousel-frame {
-    border-radius: 24px; /* Coins bien arrondis */
-    border: 6px solid var(--tropical-sky); /* Bordure blanche épaisse */
-    box-shadow: 0 15px 40px rgba(0, 78, 137, 0.25); /* Ombre portée profonde (couleur teal du thème) */
-    overflow: hidden; /* Coupe tout ce qui dépasse des bords arrondis */
-    background-color: var(--tropical-sky); /* Fond bleu ciel si l'image ne remplit pas tout */
-    margin: 1rem 0; /* Un peu d'espace vertical */
+    /* Coins très arrondis */
+    border-radius: 24px;
+    /* Bordure épaisse couleur ciel */
+    border: 6px solid var(--tropical-sky);
+    /* Ombre portée profonde */
+    box-shadow: 0 15px 40px rgba(0, 78, 137, 0.25);
+    /* Masque ce qui dépasse */
+    overflow: hidden;
+    /* Fond couleur ciel */
+    background-color: var(--tropical-sky);
+    /* Marges verticales */
+    margin: 1rem 0;
+    /* Position relative pour les enfants absolus */
     position: relative;
+    /* Force un ratio d'aspect 4:3 pour le cadre */
     aspect-ratio: 4/3;
 }
+
     .tropical-carousel-frame:hover {
+        /* Ombre orange au survol */
         box-shadow: 0 12px 48px rgba(255, 107, 53, 0.15);
+        /* Soulèvement */
         transform: translateY(-4px);
     }
-    /*Ajustement pour que les images remplissent bien le cadre */
+
+    /* Ajustement pour que les images remplissent bien le cadre */
     .tropical-carousel-frame .tropical-image {
-        box-shadow: none; /* On enlève l'ombre de l'image car le cadre en a déjà une */
-        border-radius: 0; /* On laisse le cadre gérer l'arrondi */
-        object-fit:contain; 
+        /* Supprime l'ombre de l'image (gérée par le cadre) */
+        box-shadow: none;
+        /* Supprime l'arrondi de l'image (géré par le cadre) */
+        border-radius: 0;
+        /* L'image s'adapte en gardant ses proportions (contain) */
+        object-fit: contain;
     }
