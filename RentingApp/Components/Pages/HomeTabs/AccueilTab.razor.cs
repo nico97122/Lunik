@@ -38,7 +38,7 @@
         private void UpdateTargetTexts()
         {
             _targetText2 = Word("An exeptional view");
-            _targetText3 = Word("Next to L'Autre Bord beach");
+            _targetText3 = Word("100m next to l'Autre Bord beach");
         }
 
         /// <summary>

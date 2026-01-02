@@ -16,7 +16,7 @@
 
 <div class="page">
 
-    <main style="display: flex; flex-direction: column; min-height: 100vh;">
+    <main class="main">
 
         @* Menu Mobile (Drawer) *@
         <MudHidden Breakpoint="Breakpoint.LgAndUp">
@@ -41,15 +41,15 @@
         <div id="navbar" class="top-row tropical-nav">
             <div class="nav-left-container">
                 <div>
-                    <div style="display: flex; align-items: center;">
+                    <div class="logo-and-name">
                         <a href="/" class="home-link ">
                             <div class="icon-class">
                                 <img src="images/logo-onglet.jpg" alt="Logo" style="background-color:azure ;height: 120%; width: 120%; object-fit: cover;">
                             </div>
                         </a>
-                        <a href="/" style="margin-left:1rem">
-                            <MudText Class="nav-title-main " Style="color: white; font-weight: 700;vertical-align : middle;">Le Belvédère </MudText>
-                            <MudText Class="nav-title-sub" Style="color: white; font-weight: 700;vertical-align : middle;">de l'Autre-Bord</MudText>
+                        <a href="/" class="site-name">
+                            <MudText Class="nav-title-main handwriting-font">Le Belvédère </MudText>
+                            <MudText Class="nav-title-sub handwriting-sub" >de l'Autre-Bord</MudText>
                         </a>
                     </div>
                 </div>
@@ -65,14 +65,13 @@
             </div>
 
             <div style="display: flex; align-items: center; gap: 1rem; position: relative;">
-                @* Navigation Desktop (Masquée sur mobile) *@
                 <MudHidden Breakpoint="Breakpoint.MdAndDown">
                     <a href="https://gitecannelle.com/" target="_blank" class="about-link">@Word("About")</a>
                 </MudHidden>
 
                 <MudMenu AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopLeft">
                     <ActivatorContent>
-                        <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Inherit" Style="color: white;" />
+                        <MudIconButton Icon="@Icons.Material.Filled.Language" Color="Color.Inherit" />
                     </ActivatorContent>
                     <ChildContent>
                         @foreach (SupportedLanguagesEnum lang in Enum.GetValues(typeof(SupportedLanguagesEnum)))
@@ -84,9 +83,9 @@
                     </ChildContent>
                 </MudMenu>
 
-                @* Bouton Menu Mobile (Masqué sur Desktop) *@
+                @* Bouton Menu Mobile (Masqué sur PC) *@
                 <MudHidden Breakpoint="Breakpoint.LgAndUp">
-                    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" OnClick="@((e) => DrawerToggle())" Style="color: white;" />
+                    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" OnClick="@((e) => DrawerToggle())"/>
                 </MudHidden>
             </div>
         </div>
@@ -96,7 +95,7 @@
         </article>
 
         <footer class="footer-row">
-            <MudText Typo="Typo.caption" Style="margin: 0;">© 2025 Le Belvédère de l'Autre-Bord. @Word("All rights reserved").</MudText>
+            <MudText Typo="Typo.caption">© 2025 Le Belvédère de l'Autre-Bord. @Word("All rights reserved").</MudText>
         </footer>
     </main>
 </div>

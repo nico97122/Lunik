@@ -5,6 +5,21 @@
     display: flex;
 }
 
+.mud-stack-style {
+    justify-content: center;
+    padding: 1rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.logo-and-name {
+    display: flex;
+    align-items: center;
+}
+
 .footer-row {
     /* Rend le pied de page collant en bas de l'écran */
     position: sticky !important;
@@ -51,7 +66,8 @@
     top: 0;
 }
 
-main {
+
+.main {
     /* Utilise Flexbox pour la zone principale */
     display: flex;
     /* Organise les éléments en colonne (verticalement) */
@@ -61,10 +77,6 @@ main {
 article.content {
     /* Prend tout l'espace disponible restant (flex-grow: 1) */
     flex: 1;
-    /* Active le défilement vertical si le contenu dépasse */
-    overflow-y: auto;
-    /* Cache le dépassement horizontal */
-    overflow-x: hidden;
     /* Permet au conteneur de rétrécir en dessous de sa taille de contenu minimale */
     min-height: 0;
 }
@@ -127,6 +139,9 @@ h1:focus {
     box-shadow: 0 8px 32px rgba(0, 78, 137, 0.1);
     /* Bordure fine semi-transparente */
     border: 1px solid rgba(31, 140, 111, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
 }
 
 /* Thème tropical - Définition des variables de couleurs */
@@ -166,6 +181,7 @@ h1:focus {
     border-radius: 16px 16px 0 0;
     /* Ombre portée pour donner du relief */
     box-shadow: 0 15px 35px rgba(0, 78, 137, 0.3);
+    width: 100%;
 }
 
     .tropical-header:hover {
@@ -277,13 +293,18 @@ h1:focus {
 /* Titre principal (Le Belvédère) */
 .nav-title-main {
     /* Taille de police responsive */
-    font-size: clamp(1.75rem, 2vw, 3rem) !important; 
+    font-size: clamp(2rem, 2.5vw, 3rem) !important;
+    color: white;
+    vertical-align: middle;
 }
+
 
 /* Sous-titre (de l'Autre-Bord) */
 .nav-title-sub {
     /* Taille de police responsive */
-    font-size: clamp(0.8rem, 0.9vw, 1.15rem) !important; 
+    font-size: clamp(1rem, 1.25vw, 1.5rem) !important;
+    color: white;
+    vertical-align: middle;
 }
 
 /* Conteneur des liens de navigation */
@@ -454,6 +475,8 @@ h1:focus {
     position: relative;
     /* Force un ratio d'aspect 4:3 pour le cadre */
     aspect-ratio: 4/3;
+    width: 100%;
+    max-width: 900px
 }
 
     .tropical-carousel-frame:hover {
@@ -472,3 +495,43 @@ h1:focus {
         /* L'image s'adapte en gardant ses proportions (contain) */
         object-fit: contain;
     }
+.carroussel-style {
+    height: 100%;
+    width: 100%;
+}
+/* Police manuscrite pour le titre */
+.handwriting-font {
+    font-family: 'Dancing Script', cursive !important;
+    letter-spacing: 1px; /* Espacement léger pour la lisibilité */
+}
+.handwriting-sub {
+    font-family: 'Pacifico', cursive !important;
+    letter-spacing: 1px; /* Espacement léger pour la lisibilité */
+}
+
+.carroussel-img-container {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Pour ecrire du texte par dessus*/
+}
+.carroussel-text-on-picture {
+    position: absolute;
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8) !important;
+    z-index: 10;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;  /* pour que le texte n'aille pas à la ligne */
+
+}
+
+.bottom-right-pos {
+    top: 85%;
+    left: 75%;
+}
+
+.top-center-pos {
+    top: 10%;
+    left: 50%;
+}
